@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
 
   def create
   	user = User.find_by_username(params[:username])
-  	if user && User.authenticate(params[:password], params[:password])
-  		session[:user_id] = user.user_id
-  		redirect_to home_path, notice: "Logged in"
+  	if user && User.authenticate(params[:username], params[:password])
+  		session[:user_id] = user.id
+  		redirect_to home_path, notice: "You are logged into the chess camp system"
   	else
   		flash.now.alert = "Username or password is invalid"
   		render 'new'

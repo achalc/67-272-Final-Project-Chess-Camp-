@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	# before_action :check_login
+  # authorize_resource
 
   def new
   	@user = User.new
@@ -34,7 +35,10 @@ class UsersController < ApplicationController
     end
     
   def user_params
-  	params.require(:user).permit(:password, :password_confirmation, :username, :role, :instructor_id, :password_digest, :active)
-  	
+    if current_user && current_user.role?(:admin)
+      params.require(:user).permit(:password, :password_confirmation, :username, :role, :active)
+  	else
+      params.require(:user).permit(:password, :password_confirmation, :username, :active)
+    end 
   end
 end

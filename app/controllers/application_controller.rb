@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def check_login
-  	redirct_to login_path, alert: "You need to log in to view this page." if current_user.nil?
+  	redirect_to login_path, alert: "You need to log in to view this page." if current_user.nil?
   end
   
 end
