@@ -1,4 +1,8 @@
 ChessCamp::Application.routes.draw do
+  get "user/new"
+  get "user/edit"
+  get "user/create"
+  get "user/update"
   # generated routes
   resources :curriculums
   resources :instructors
