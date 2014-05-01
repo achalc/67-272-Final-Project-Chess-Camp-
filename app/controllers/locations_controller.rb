@@ -1,11 +1,15 @@
 class LocationsController < ApplicationController
+	skip_before_action :check_login, only: [:index, :show]
+	before_action :set_location, only: [:show, :edit, :update, :destroy]
+
+
+
   def index
   	@active_locations = Location.active.alphabetical.paginate(page: params[:page])
   	@inactive_locations = Location.inactive.alphabetical.paginate(page: params[:page])
   end
 
   def show
-
   end
 
   def new
@@ -36,4 +40,13 @@ class LocationsController < ApplicationController
   	@location.destroy
   	redirect_to locations_path, notice: "#{@location.name} was removed from the system."
   end
+
+  private
+  	def set_location
+  		@location = Location.find(params[:id])
+  	end
+
+  	def location_params
+  		params.require(:location).permit(:name, :street_1, :city, :state, :zip, :max_capacity, :active)
+  	end
 end

@@ -5,10 +5,16 @@
 
 <strong>Address:&nbsp;&nbsp;</strong> 
   <%= @location.street_1 %><br /><br />
-  <%= @location.street_2 %><br /><br />
+
+
+<% unless @location.street_2.nil? %>
+	<strong>Apt. | Suite | Office Number:&nbsp;&nbsp;</strong> 
+	  <%= @location.street_2 %><br /><br />
+<% end %>
+
 
 <strong>City:&nbsp;&nbsp;</strong> 
-  <%= @location.city %><br /><br />
+  <%= @location.city + ", " + @location.state + " " + @location.zip %><br /><br />
 
 <strong>Maximum Capacity&nbsp;&nbsp;</strong>
   <%= @location.max_capacity %><br /><br />
