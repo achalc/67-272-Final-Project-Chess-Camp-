@@ -9,18 +9,13 @@
 
 
 <strong>Phone:&nbsp;&nbsp;</strong> 
-  <%= @family.phone %><br /><br />
+  <%= number_to_phone(@family.phone) %><br /><br />
 
 
 <strong>Email:&nbsp;&nbsp;</strong> 
-  <%= @family.email %><br /><br />
+  <%= @family.email %><br /><br />	
 
-<strong>Students&nbsp;&nbsp;</strong>
-  <% @family.students.each do |student|  %>
-  	<%= student.first_name %>
-  <% end %><br /><br />
-
-<strong>Active</strong>
+<strong>Active:&nbsp;&nbsp;</strong>
 	<% if @family.active %>
 		<%= "Yes" %>
 	<% else %>
