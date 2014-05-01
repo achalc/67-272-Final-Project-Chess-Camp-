@@ -1,4 +1,11 @@
 ChessCamp::Application.routes.draw do
+  get "families/index"
+  get "families/show"
+  get "families/new"
+  get "families/edit"
+  get "families/create"
+  get "families/update"
+  get "families/destroy"
   get "locations/index"
   get "locations/show"
   get "locations/new"
