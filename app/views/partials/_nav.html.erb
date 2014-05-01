@@ -45,6 +45,16 @@
             </ul>
           </li>
 
+          <!-- options for families -->
+          <li class="has-dropdown">
+            <!-- <a href="#">Instructors</a> -->
+            <%= link_to "Families", families_path %>
+            <ul class="dropdown">
+              <li><%= link_to "List Families", families_path %></li>
+              <li><%= link_to "Add a Family", new_family_path %></li>
+            </ul>
+          </li>
+
           <% if logged_in? %>
             <ul class="right">
               <li class="has-dropdown">
