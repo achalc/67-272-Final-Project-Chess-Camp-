@@ -35,6 +35,15 @@
               <li><%= link_to "Add an Instructor", new_instructor_path %></li>
             </ul>
           </li>
+          <!-- options for locations -->
+          <li class="has-dropdown">
+            <!-- <a href="#">Instructors</a> -->
+            <%= link_to "Locations", locations_path %>
+            <ul class="dropdown">
+              <li><%= link_to "List Locations", locations_path %></li>
+              <li><%= link_to "Add a Location", new_location_path %></li>
+            </ul>
+          </li>
 
           <% if logged_in? %>
             <ul class="right">

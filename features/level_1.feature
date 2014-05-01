@@ -11,7 +11,7 @@ Feature: Authentication
     And I fill in "password" with "secret"
     And I press "Log In"
     Then I should see "You are logged into the chess camp system"
-    
+
   Scenario: Login failed because of wrong password
     Given a valid admin
     When I go to the login page
