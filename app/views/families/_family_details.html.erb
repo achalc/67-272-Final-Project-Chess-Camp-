@@ -1,0 +1,28 @@
+<h3>Family Details</h3>
+
+<strong>Family Name:&nbsp;&nbsp;</strong> 
+  <%= @family.family_name %><br /><br />
+
+<strong>Parent First Name:&nbsp;&nbsp;</strong> 
+  <%= @family.parent_first_name %><br /><br />
+
+
+
+<strong>Phone:&nbsp;&nbsp;</strong> 
+  <%= @family.phone %><br /><br />
+
+
+<strong>Email:&nbsp;&nbsp;</strong> 
+  <%= @family.email %><br /><br />
+
+<strong>Students&nbsp;&nbsp;</strong>
+  <% @family.students.each do |student|  %>
+  	<%= student.first_name %>
+  <% end %><br /><br />
+
+<strong>Active</strong>
+	<% if @family.active %>
+		<%= "Yes" %>
+	<% else %>
+		<%= "No" %>
+	<% end %>
