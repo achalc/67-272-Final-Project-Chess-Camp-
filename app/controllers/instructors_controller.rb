@@ -12,11 +12,11 @@ class InstructorsController < ApplicationController
   def show
     @upcoming_camps = @instructor.camps.upcoming.chronological
     @past_camps = @instructor.camps.past.chronological
+    @user
   end
 
   def new
     @instructor = Instructor.new
-    @instructor.user.build
   end
 
   def edit
