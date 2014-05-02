@@ -20,7 +20,7 @@ Feature: Manage student
     And I should see "Unrated"
     And I should see "16"
     And I should see "Regan, Ellen"
-    Then show me the page
+#    Then show me the page
     And I should not see "Wilson"
     And I should not see "Teyah"
     And I should not see "true"
@@ -69,6 +69,7 @@ Feature: Manage student
     And I fill in "student_date_of_birth" with "05/01/2000"
     And I press "Create Student"
     Then I should see "Subra Suresh was added to the system"
+    Then show me the page
     And I should see "Student Details"
     And I should see "2000"
   
