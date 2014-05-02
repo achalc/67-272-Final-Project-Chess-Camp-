@@ -47,6 +47,9 @@ gem 'simple_form'
 # Use nested forms
 gem 'nested_form'
 
+# Use time date helpers
+gem 'time_date_helpers', '0.0.2'
+
 # Use foundation for base CSS
 gem 'foundation-rails'
 

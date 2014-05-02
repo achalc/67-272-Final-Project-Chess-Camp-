@@ -12,16 +12,18 @@ class InstructorsController < ApplicationController
   def show
     @upcoming_camps = @instructor.camps.upcoming.chronological
     @past_camps = @instructor.camps.past.chronological
-    @user
+    # @user
   end
 
   def new
     @instructor = Instructor.new
+    @user = @instructor.build_user
   end
 
   def edit
     # reformating the phone so it has dashes when displayed for editing (personal taste)
     @instructor.phone = number_to_phone(@instructor.phone)
+    @user = @instructor.build_user
   end
 
   def create

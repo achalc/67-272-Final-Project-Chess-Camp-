@@ -9,7 +9,10 @@
   <%= mail_to @instructor.email, @instructor.email, encode: "javascript" %><br /><br />
 
 <strong>Role&nbsp;&nbsp;</strong>
-	<%= @instructor.user.role %><br /><br />
+	<%= @instructor.user.role unless @instructor.user.nil? %><br /><br />
+
+<strong>Username&nbsp;&nbsp;</strong>
+	<%= @instructor.user.username unless @instructor.user.nil? %><br /><br />	
 
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @instructor.active ? "Yes" : "No" %><br /><br />
