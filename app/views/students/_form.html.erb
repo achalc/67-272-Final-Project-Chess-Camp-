@@ -8,7 +8,7 @@
 		<%= f.input :last_name %>
 		<%= f.input :family_id, :collection => Family.active.alphabetical.map { |e| e.family_name }, :prompt => true %>
 		<!-- need to fix the date  -->
-		<%= f.input :date_of_birth, label: "Date of Birth", as: :date, start_year: Time.now.year - 90, end_year: Time.now.year - 4, order: [:month, :day, :year] %>
+		<%= f.input :date_of_birth, :as => :date_picker  %>
 		<%= f.input :rating %>
 		<%= f.input :active %>
 
