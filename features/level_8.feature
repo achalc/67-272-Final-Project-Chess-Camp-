@@ -20,6 +20,7 @@ Feature: Manage student
     And I should see "Unrated"
     And I should see "16"
     And I should see "Regan, Ellen"
+    Then show me the page
     And I should not see "Wilson"
     And I should not see "Teyah"
     And I should not see "true"
@@ -65,7 +66,6 @@ Feature: Manage student
     And I fill in "student_first_name" with "Subra"
     And I select "Hanson" from "student_family_id"
     And I fill in "student_rating" with "2000"
-    Then show me the page
     And I fill in "student_date_of_birth" with "05/01/2000"
     And I press "Create Student"
     Then I should see "Subra Suresh was added to the system"
@@ -77,7 +77,6 @@ Feature: Manage student
     And I fill in "student_last_name" with "Suresh"
     And I select "Hanson" from "student_family_id"
     And I fill in "student_rating" with "2000"
-    Then show me the page
     And I fill in "student_date_of_birth" with "05/01/2000"
     And I press "Create Student"
     Then I should see "can't be blank"
