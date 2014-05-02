@@ -12,7 +12,13 @@
 		<tr>
 			<td><%= link_to student.name, student_path(student)%></td>
 			<td><%= student.age %></td>
-			<td><%= student.rating %></td>
+			<td>
+				<% if student.rating == 0 %>
+					<%= "Unrated" %><br /><br />
+				<% else %>
+					<%= student.rating %><br /><br />
+				<% end %>
+			</td>
 			<td><%= link_to "Edit", edit_student_path(student), class: "buttony tiny radius" %></td>
 		</tr>
 
