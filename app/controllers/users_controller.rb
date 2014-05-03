@@ -29,6 +29,11 @@ class UsersController < ApplicationController
   	end
   end
 
+  def show
+    # change this so it goes to the users own page
+    redirect_to(home_path)
+  end
+
   private
   def set_user
       @user = User.find(params[:id])

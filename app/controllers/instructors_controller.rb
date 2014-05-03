@@ -2,6 +2,7 @@ class InstructorsController < ApplicationController
   include ActionView::Helpers::NumberHelper
   # before_action :check_login
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
 
   def index

@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 	skip_before_action :check_login, only: [:index, :show]
 	before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  authorize_resource
 
 
   def index
