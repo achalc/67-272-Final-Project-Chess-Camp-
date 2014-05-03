@@ -9,6 +9,7 @@ class CampsController < ApplicationController
 
   def show
     @instructors = @camp.instructors.alphabetical.to_a
+    @registrations = Registration.where("camp_id = ?", params[:id])
   end
 
   def new

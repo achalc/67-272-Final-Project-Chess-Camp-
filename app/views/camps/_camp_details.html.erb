@@ -5,6 +5,10 @@
 <strong>Cost:&nbsp;&nbsp;</strong> 
   <%= number_to_currency(@camp.cost) %><br /><br />
 
+<strong>Rating:&nbsp;&nbsp;</strong> 
+  <%= @camp.curriculum.min_rating.to_s + " - " + @camp.curriculum.max_rating.to_s %><br /><br />
+
+
 <strong>Max Students:&nbsp;&nbsp;</strong> 
   <%= @camp.max_students %><br /><br />
 
