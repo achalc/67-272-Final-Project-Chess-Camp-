@@ -29,7 +29,6 @@ Feature: Manage User Accounts
     And I select "Administrator" from "instructor_user_attributes_role"
     And I press "Update Instructor"
     Then I should see "Patrick Dustmann was revised in the system"
-    Then show me the page
     And I should see "Role"
     And I should see "admin"
     And I should see "patrick"
