@@ -17,7 +17,6 @@ Feature: View registrations
     And I should see "Martin, Alex"
     And I should see "Merritt, Dean"
     And I should see "Regan, Peter"
-    Then show me the page
     And I should see "655"
     And I should see "842"
 

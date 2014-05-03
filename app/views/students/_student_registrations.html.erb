@@ -1,0 +1,17 @@
+<% unless @registrations.empty? %>
+  <!-- <h3>&nbsp;</h3> -->
+  <div class="panel clearfix">
+    <h5><%= 'Registrations' + " (" + @registrations.size.to_s + ")"%></h5>
+    <ul class="side-nav">
+      <% @registrations.each do |registration| %>
+        <li><%=  "Name: " + registration.camp.name %></li>
+        <li><%= "Start Date: " + registration.camp.start_date.strftime("%m/%d/%y").to_s%></li>
+      <% end %>
+    </ul>
+  </div>
+
+<% else %>
+  <div class="panel clearfix">
+    <h5>No Registrations</h5>
+  </div>
+<% end %>
