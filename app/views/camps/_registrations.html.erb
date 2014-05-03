@@ -4,7 +4,8 @@
     <h5><%= 'Registrations' + " (" + @registrations.size.to_s + ")"%></h5>
     <ul class="side-nav">
       <% @registrations.each do |registration| %>
-        <li><%=  "Name: " + registration.student.name + " | Rating: " + registration.student.rating.to_s %></li>
+        <li><%=  link_to registration.student.name, student_path(registration.student) %></li>
+        <li><%= "Rating: " + registration.student.rating.to_s %></li>
       <% end %>
     </ul>
   </div>
