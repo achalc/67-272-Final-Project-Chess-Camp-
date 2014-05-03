@@ -1,8 +1,8 @@
 class InstructorsController < ApplicationController
   include ActionView::Helpers::NumberHelper
   # before_action :check_login
+  load_and_authorize_resource
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
-  authorize_resource
 
 
   def index
@@ -24,7 +24,11 @@ class InstructorsController < ApplicationController
   def edit
     # reformating the phone so it has dashes when displayed for editing (personal taste)
     @instructor.phone = number_to_phone(@instructor.phone)
-    @user = @instructor.build_user
+    if @user.nil?
+      @user = @instructor.build_user
+    else
+      @user = @current_user
+    end
   end
 
   def create

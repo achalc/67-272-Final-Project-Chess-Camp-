@@ -18,13 +18,15 @@ class Ability
           instructor.id == user.instructor_id
         end
         can :read, Location
+        # may have to restrict what other instructors can be seen
         can :read, Instructor
         can :read, Curriculum
-        can :read, Camp do |camp|
-          camp.instructor.id == user.instructor_id
-        end
+        # may have to restrict which camps an instructor can see
+        can :read, Camp
+        can :read, Student
       else
-        can :read, :all
+        # 
+        can :read, Camp
       end
 
 
