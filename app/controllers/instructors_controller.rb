@@ -24,20 +24,10 @@ class InstructorsController < ApplicationController
   def edit
     # reformating the phone so it has dashes when displayed for editing (personal taste)
     @instructor.phone = number_to_phone(@instructor.phone)
-    # user_ids = User.all.map { |e| e.id } 
-    # if !@instructor.user.nil? && user_ids.include?(@instructor.user.id)
-    #   @user = @instructor.user
-    # else
-    #   @user = @instructor.build_user
-    # end
     @instructor = Instructor.find(params[:id])
     if @instructor.user.nil?
       @user = @instructor.build_user
     end
-    # else
-    #   @user = @current_user
-    # end
-    # @user = @current_user
   end
 
   def create

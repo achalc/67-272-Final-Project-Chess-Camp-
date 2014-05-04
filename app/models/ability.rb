@@ -29,6 +29,7 @@ class Ability
           instructor_camp_ids = CampInstructor.all.where(instructor_id: user.instructor_id).map { |e| e.camp_id }
           # all the camp ids a student is registered for
           student_camp_ids = Registration.all.where(student_id: student.id).map { |b| b.camp_id }
+          # check if there are any overlapping camps that a student takes and an instructor teaches
           !(instructor_camp_ids & student_camp_ids).empty?
         end
       else
