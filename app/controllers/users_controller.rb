@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	# before_action :check_login
-  # authorize_resource
+  skip_before_action :check_login, only: [:new, :create]
 
   def new
   	@user = User.new
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def update
   	@user = @current_user
+    # @user.update_attributes(:user_params)
   	if @user.save
   		redirect_to(@user, notice: "User was successfully updated in the system.")
   	else

@@ -1,9 +1,9 @@
 class InstructorsController < ApplicationController
   include ActionView::Helpers::NumberHelper
-  # before_action :check_login
-  load_and_authorize_resource
+  before_action :check_login
+  # skip_before_action :check_login, only: [:index, :show]
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
 
   def index
     @active_instructors = Instructor.active.alphabetical.paginate(:page => params[:page]).per_page(10)
@@ -24,11 +24,19 @@ class InstructorsController < ApplicationController
   def edit
     # reformating the phone so it has dashes when displayed for editing (personal taste)
     @instructor.phone = number_to_phone(@instructor.phone)
-    if @user.nil?
-      @user = @instructor.build_user
-    else
-      @user = @current_user
-    end
+    # user_ids = User.all.map { |e| e.id } 
+    # if !@instructor.user.nil? && user_ids.include?(@instructor.user.id)
+    #   @user = @instructor.user
+    # else
+    #   @user = @instructor.build_user
+    # end
+    @instructor = Instructor.find(params[:id])
+    # if @instructor.user.nil?
+    #   @user = @instructor.build_user
+    # else
+    #   @user = @current_user
+    # end
+    # @user = @current_user
   end
 
   def create

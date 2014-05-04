@@ -14,15 +14,16 @@ class Ability
       if user.role? :admin
         can :manage, :all
       elsif user.role? :instructor
+        can :read, Instructor
         can :update, Instructor do |instructor|
           instructor.id == user.instructor_id
         end
         can :read, Location
         # may have to restrict what other instructors can be seen
-        can :read, Instructor
         can :read, Curriculum
         # may have to restrict which camps an instructor can see
         can :read, Camp
+        # instructor can only view own camp's students details
         can :read, Student
       else
         # 
