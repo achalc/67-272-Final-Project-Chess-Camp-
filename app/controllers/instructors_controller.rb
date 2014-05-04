@@ -31,8 +31,9 @@ class InstructorsController < ApplicationController
     #   @user = @instructor.build_user
     # end
     @instructor = Instructor.find(params[:id])
-    # if @instructor.user.nil?
-    #   @user = @instructor.build_user
+    if @instructor.user.nil?
+      @user = @instructor.build_user
+    end
     # else
     #   @user = @current_user
     # end
@@ -67,6 +68,6 @@ class InstructorsController < ApplicationController
     end
 
     def instructor_params
-      params.require(:instructor).permit(:first_name, :last_name, :bio, :email, :phone, :active, user_attributes: [:username, :password, :password_confirmation, :role, :active])
+      params.require(:instructor).permit(:id, :first_name, :last_name, :bio, :email, :phone, :active, user_attributes: [:id, :username, :password, :password_confirmation, :role, :active])
     end
 end
