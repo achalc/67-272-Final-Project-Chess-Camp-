@@ -1,4 +1,8 @@
 ChessCamp::Application.routes.draw do
+  get "registrations/new"
+  get "registrations/create"
+  get "registrations/update"
+  get "registrations/edit"
   get "students/index"
   get "students/show"
   get "students/new"
