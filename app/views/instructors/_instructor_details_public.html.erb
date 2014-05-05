@@ -7,3 +7,6 @@
 
 <strong>Picture</strong>
 <!-- Need to add in headshot of instructor -->
+<% unless @instructor.picture_url.nil? %>
+	<p><%= image_tag @instructor.picture_url %></p>
+<% end %> 

@@ -17,12 +17,15 @@
 <strong>Active?&nbsp;&nbsp;</strong>
   <%= @instructor.active ? "Yes" : "No" %><br /><br />
 
-<strong>Biography</strong><br />
+<strong>Biography</strong>
+<br /><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
 <strong>Picture</strong><br />
-  <!-- Need to add in headshot of instructor -->
-
+<br /><br />
+<% unless @instructor.picture_url.nil? %>
+  <p><%= image_tag @instructor.picture_url %></p>
+<% end %> 
   <br /><br />
 
 
