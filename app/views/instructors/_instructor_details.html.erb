@@ -20,6 +20,12 @@
 <strong>Biography</strong><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
+<strong>Picture</strong><br />
+  <!-- Need to add in headshot of instructor -->
+
+  <br /><br />
+
+
 <% if can? :update, @instructor %>
 	<%= link_to "Edit this instructor", edit_instructor_path(@instructor), class: "button tiny radius" %>&nbsp;&nbsp;
 <% end %>

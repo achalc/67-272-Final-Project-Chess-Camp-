@@ -1,7 +1,11 @@
 <div class="row">
   <div class="small-7 columns">
     <!-- MAIN CONTENT GOES HERE -->
-    <%= render :partial => "instructor_details" %>
+    <% if can? :update, Instructor %>
+      <%= render :partial => "instructor_details" %>
+    <% else %>
+      <%= render partial: "instructor_details_public"%>
+    <% end %>
   </div>
 
   <div class="small-1 columns">
