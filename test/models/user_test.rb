@@ -37,8 +37,10 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "allow user to authenticate with password" do
-      assert @mark_user.authenticate("secret")
-      deny @mark_user.authenticate("notsecret")
+      # assert @mark_user.authenticate("secret")
+      # deny @mark_user.authenticate("notsecret")
+      deny User.authenticate("mheimann", "password")
+      assert User.authenticate("mheimann", "secret")
     end
 
     should "require a password for new users" do
