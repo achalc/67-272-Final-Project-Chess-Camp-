@@ -1,7 +1,7 @@
 class InstructorsController < ApplicationController
   include ActionView::Helpers::NumberHelper
   before_action :check_login
-  # skip_before_action :check_login, only: [:index, :show]
+  skip_before_action :check_login, only: [:index, :show]
   before_action :set_instructor, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 

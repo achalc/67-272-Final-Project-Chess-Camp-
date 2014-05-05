@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def show
     # change this so it goes to the users own page
-    redirect_to(home_path)
+    redirect_to(user_path)
   end
 
   private

@@ -12,9 +12,13 @@
 <% @active_instructors.each do |instructor| %>
   <tr>
     <td><%= link_to instructor.name, instructor_path(instructor) %></td>
+    <% if can? 
     <td align="center"><%= number_to_phone instructor.phone %></td>
+    <% end %> 
     <td align="center"><%= instructor.camps.size %></td>
-    <td><%= link_to 'Edit', edit_instructor_path(instructor), class: "button tiny radius" %></td>
+    <% if can? :update, instructor %>
+      <td><%= link_to 'Edit', edit_instructor_path(instructor), class: "button tiny radius" %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

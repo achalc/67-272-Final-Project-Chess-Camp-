@@ -33,8 +33,10 @@ class Ability
           !(instructor_camp_ids & student_camp_ids).empty?
         end
       else
-        # 
+        # guest user case
         can :read, Camp
+        can :read, Instructor
+
       end
 
 
