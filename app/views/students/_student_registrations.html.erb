@@ -7,12 +7,12 @@
         <li><%=  "Name: " + registration.camp.name %></li>
         <li><%= "Start Date: " + registration.camp.start_date.strftime("%m/%d/%y").to_s%></li>
       <% end %>
-<!--       <li><%= link_to 'Register student for a camp', %></li> -->
     </ul>
   </div>
 
 <% else %>
   <div class="panel clearfix">
     <h5>No Registrations</h5>
+    <!-- <li><%= link_to 'Register student for a camp', new_registration_path%></li> -->
   </div>
 <% end %>
