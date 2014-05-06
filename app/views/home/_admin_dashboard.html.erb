@@ -1,27 +1,31 @@
 <div class="row">
-    <div class="large-4 columns">
-      <% if !@instructor.picture_url.nil? %>
-        <%= image_tag(@instructor.picture_url, size: "300x320") %>
-      <% else %>
-        <%= link_to image_tag('icon1SetPic.jpg', size: "300x320"), edit_instructor_path(@instructor) %>
-      <% end %>
-      <h3><%= @instructor.proper_name %></h3>
-      <h4> Quick Links </h4>
-      <ul>
+    <div class="large-6 columns">
+        <!-- <h3><%= @instructor.proper_name %></h3> -->
+        <center><h4> Camps per Instructor  </h4></center>
+      <%=  bar_chart @camps_to_instructor, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
+      <!-- <ul>
         <li><%= link_to 'Edit my information', edit_instructor_path(@instructor) %></li>
         <li><%= link_to 'View Camps', camps_path %></li> 
-      </ul>
+        <li><%= link_to "Create a Registration", new_registration_path %></li>
+      </ul> -->
     </div>
     
-    <div class="large-8 columns">
+    <div class="large-6 columns">
       <center><h4> Camps per Curriculum</h4></center>
       <%=  pie_chart @camps.group(:name).count, library: {backgroundColor: "#E6E6E6" } %>
     </div>  
 </div>
-
+<!-- 
 <div class="row">
   <div class="large-12 columns">
     <center><h4> Camps per Instructor </h4></center>
-    <%=  column_chart @camps_to_instructor, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
+    <%=  bar_chart @camps_to_instructor, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="large-12 columns">
+    <center><h4> Registrations per Camp </h4></center>
+    <%=  column_chart @camp_to_registration_admin, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
   </div>
 </div>
