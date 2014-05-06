@@ -1,9 +1,9 @@
 <div class="row">
     <div class="large-4 columns">
       <% if !@instructor.picture_url.nil? %>
-        <%= image_tag(@instructor.picture_url, size: "300x360") %>
+        <%= image_tag(@instructor.picture_url, size: "300x320") %>
       <% else %>
-        <%= link_to image_tag('icon1SetPic.jpg', size: "300x360"), edit_instructor_path(@instructor) %>
+        <%= link_to image_tag('icon1SetPic.jpg', size: "300x320"), edit_instructor_path(@instructor) %>
       <% end %>
       <h3><%= @instructor.proper_name %></h3>
       <h4> Quick Links </h4>

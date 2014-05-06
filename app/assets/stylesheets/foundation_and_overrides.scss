@@ -1123,8 +1123,8 @@ $table-margin-bottom: rem-calc(25);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #FFFFFF;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: #000;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 $topbar-height: 50px;
@@ -1144,8 +1144,8 @@ $topbar-dropdown-link-color: #3399FF;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #000;
-$topbar-link-color-hover: #FFFFFF;
+$topbar-link-color: #FFFFFF;
+$topbar-link-color-hover: #42ffe3;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;

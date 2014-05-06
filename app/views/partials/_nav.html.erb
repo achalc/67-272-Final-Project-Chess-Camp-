@@ -7,7 +7,7 @@
       <section class="top-bar-section">
         <ul class="left">
           <li class="has-dropdown">
-            <%= link_to image_tag('amcc_logo.png'), home_path %>
+            <%= link_to image_tag('navicon.png', size: '45x45'), home_path %>
             <ul class="dropdown">
               <% if logged_in? %>
                 <li><%= link_to "Welcome #{current_user.instructor.first_name}", current_user.instructor %></li>
