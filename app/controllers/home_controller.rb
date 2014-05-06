@@ -5,7 +5,6 @@ class HomeController < ApplicationController
       @upcoming_camps = @instructor.camps.upcoming.chronological.map { |e| e.name.to_s + ' on ' + humanize_date(e.start_date) }
       @registration_count = @instructor.camps.upcoming.chronological.map { |camp| Registration.where("camp_id = ?", camp.id).count  }
   	  @camp_to_registration = Hash[@upcoming_camps.zip @registration_count]
-      # redirect_to @instructor, notice: "#{@camp_to_registration}"
     end
   end
 

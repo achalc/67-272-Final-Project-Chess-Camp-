@@ -16,15 +16,15 @@
     </div>
     
     <div class="large-8 columns">
+      <center><h4>Registrations by Camp</h4></center>
       <%=  column_chart @camp_to_registration,  library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
-      <h4>Your Information</h4>
-      <ul>
-        <li><%= "Username: " + current_user.username %></li>
-        <li><%= "Email: " + @instructor.email %></li>
-        <li><%= "Phone Number: " + number_to_phone(@instructor.phone) %></li>
-      </ul>
+      <br>
+      <br>
+      <center>
+        <h4>Your Information</h4>
+        <p><%= "Username: " + current_user.username %></p>
+        <p><%= "Email: " + @instructor.email %></p>
+        <p><%= "Phone Number: " + number_to_phone(@instructor.phone) %></p>
+    </center>
     </div>  
-    
-
-  
 </div>

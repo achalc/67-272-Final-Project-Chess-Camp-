@@ -10,7 +10,7 @@ module Contexts
     end
 
     def delete_active_locations
-      # @cmu.delete
+      @cmu.delete
       @north.delete
     end
 
