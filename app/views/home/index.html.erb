@@ -1,12 +1,55 @@
-<h2>Welcome Chess Parents!</h2>
+<!-- Main Banner Image - place in a paragraph to enforce the modular scale spacing -->
+  <p><%= image_tag('banner.jpg')%></p>
+    
+  
+  <!-- End Nav and Banner -->
+  
+  
+  <!-- Main Content Section -->
+  
+  <div class="row">
+  
+    <div class="large-8 columns">
+      <h4>This is a content section.</h4>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+      <p><a href="#" class="secondary small button">Next Page →</a></p>
+    </div>
+    
+    <div class="large-4 columns">
+    
+      <!-- Gallery d with a block grid. Note: block grid items should be the same size for optimal results -->
+      
+      <ul class="small-block-grid-3">
+        <li><a href="#"><%= image_tag('AlexPlaying10.jpg')%></a></li>
+        <li><a href="#"><%= image_tag('Kelsey1.jpg')%></a></li>
+        <li><a href="#"><%= image_tag('chess-boy[2].jpg')%></a></li>
+        <li><a href="#"><img src="http://placehold.it/120x120" /></a></li>
+        <li><a href="#"><img src="http://placehold.it/120x120" /></a></li>
+        <li><a href="#"><img src="http://placehold.it/120x120" /></a></li>
+      </ul>
+    </div>
+        
+  </div>
+  
+  
+  <!-- Call to Action Panel -->
+  <div class="row">
+    <div class="large-12 columns">
+    
+      <div class="panel">
+        <h4>Get in touch!</h4>
+            
+        <div class="row">
+          <div class="large-9 columns">
+            <p>We'd love to hear from you, you attractive person you.</p>
+          </div>
+          <div class="large-3 columns">
+            <a href="#" class="radius button right">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
-<p><%= image_tag 'AlexPlaying10.jpg', class: "left", width: "150" %> The A &amp; M 
-  Chess Camps are the finest chess camps in the United States (<em>we concede 
-  Russia can do better, but not much better</em>) and guaranteed to 
-  <strong>transform your son or daughter into a tiger at the chess board</strong>.  
-  The links below will tell you more about our camps, curriculums and 
-  instructors and in the future will actually allow you to register your son 
-  or daughter for those camps. [<%= link_to "O Happy Day!", "https://www.youtube.com/watch?v=a37bBm8pXSk" %>]
-</p>
-
-<p>If you are an administrator (don't lie), <%= link_to "click here to review camps.", camps_path %></p>
