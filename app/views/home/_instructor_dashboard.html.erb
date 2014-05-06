@@ -16,7 +16,7 @@
     </div>
     
     <div class="large-8 columns">
-      <%=  column_chart @camp_to_registration %>
+      <%=  column_chart @camp_to_registration,  library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
       <h4>Your Information</h4>
       <ul>
         <li><%= "Username: " + current_user.username %></li>
