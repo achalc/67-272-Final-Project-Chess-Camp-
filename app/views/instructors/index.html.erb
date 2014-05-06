@@ -19,6 +19,8 @@
 
   <div class="small-4 columns">
     <!-- SIDEBAR CONTENT GOES HERE -->
-    <%= render partial: 'inactive_instructors' %>
+    <% if can? :manage, Instructor %>
+      <%= render partial: 'inactive_instructors' %>
+    <% end %>
   </div>
 </div>
