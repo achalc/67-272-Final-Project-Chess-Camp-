@@ -65,6 +65,9 @@ gem 'carrierwave'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '3.1.5'
 
+# Use chartkick to generate graphs / charts
+gem 'chartkick'
+
 # Additional gems that are very useful in Rails development
 group :development do
   gem 'quiet_assets'

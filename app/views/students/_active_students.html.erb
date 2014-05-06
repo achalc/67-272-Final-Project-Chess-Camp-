@@ -19,9 +19,10 @@
 					<%= student.rating %><br /><br />
 				<% end %>
 			</td>
-			<td><%= link_to "Edit", edit_student_path(student), class: "buttony tiny radius" %></td>
+			<% if can? :manage, Student %>
+				<td><%= link_to "Edit", edit_student_path(student), class: "buttony tiny radius" %></td>
+			<% end %>
 		</tr>
-
 	<% end %>
 </table>
 <span class="paginate">
