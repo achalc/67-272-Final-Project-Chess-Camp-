@@ -10,6 +10,7 @@
             <%= link_to image_tag('amcc_logo.png'), home_path %>
             <ul class="dropdown">
               <% if logged_in? %>
+                <li><%= link_to "Welcome #{current_user.instructor.first_name}", current_user.instructor %></li>
                 <li><%= link_to "Edit My Profile", current_user.instructor %></li>
                 <li><%= link_to "Logout" , logout_path%></li>
               <% end %>
