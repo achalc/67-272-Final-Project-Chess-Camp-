@@ -1,5 +1,14 @@
 <!-- Main Banner Image - place in a paragraph to enforce the modular scale spacing -->
-  <p><%= image_tag('banner.jpg')%></p>
+
+	<% if cannot? :update, Instructor %>
+  		<p><%= image_tag('banner.jpg')%></p>
+  	<% elsif can? :manage, :all,  %>
+  		 <!-- Instructor Dashboard -->
+  		 
+  	<% else %>
+  		<!-- Admin Dashboard  -->
+
+  	<% end %>
     
   
   <!-- End Nav and Banner -->
