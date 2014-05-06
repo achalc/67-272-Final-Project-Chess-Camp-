@@ -9,7 +9,9 @@
       <% end %>
     </ul>
   </div>
-  <%= link_to 'Add a registration', new_registration_path, class: "button tiny radius"%>
+  <% if can? :manage, Registration %>
+    <%= link_to 'Add a registration', new_registration_path, class: "button tiny radius"%>
+  <% end %>
   
 
 
@@ -17,5 +19,7 @@
   <div class="panel clearfix">
     <h5>No Registrations</h5>
   </div>
-  <%= link_to 'Add a registration', new_registration_path, class: "button tiny radius"%>
+  <% if can? :manage, Registration %>
+    <%= link_to 'Add a registration', new_registration_path, class: "button tiny radius"%>
+  <% end %>
 <% end %>

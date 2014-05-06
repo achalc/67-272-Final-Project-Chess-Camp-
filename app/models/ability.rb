@@ -36,6 +36,7 @@ class Ability
         # guest user case
         can :read, Camp
         can :read, Instructor
+        can :read, Location
 
       end
 

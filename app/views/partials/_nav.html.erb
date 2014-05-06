@@ -9,20 +9,26 @@
       <section class="top-bar-section">
         <ul class="left">
           <!-- options for curriculums -->
-          <li class="has-dropdown">
-            <%= link_to "Curriculums", curriculums_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Curriculums", curriculums_path %></li>
-              <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
-            </ul>
-          </li>
+          <% if can? :read, Curriculum %>
+            <li class="has-dropdown">
+              <%= link_to "Curriculums", curriculums_path %>
+              <ul class="dropdown">
+                <li><%= link_to "List Curriculums", curriculums_path %></li>
+                <% if can? :create, Curriculum %>
+                  <li><%= link_to "Add a Curriculum", new_curriculum_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
           <!-- options for camps -->
           <li class="has-dropdown">
             <%= link_to "Camps", camps_path %>
             <ul class="dropdown">
               <li><%= link_to "List Camps", camps_path %></li>
-              <li><%= link_to "Add a Camp", new_camp_path %></li>
+              <% if can? :create, Camp %>
+                <li><%= link_to "Add a Camp", new_camp_path %></li>
+              <% end %>
             </ul>
           </li>
 
@@ -32,43 +38,61 @@
             <%= link_to "Instructors", instructors_path %>
             <ul class="dropdown">
               <li><%= link_to "List Instructors", instructors_path %></li>
-              <li><%= link_to "Add an Instructor", new_instructor_path %></li>
+              <% if can? :create, Instructor %>
+                <li><%= link_to "Add an Instructor", new_instructor_path %></li>
+              <% end %>
             </ul>
           </li>
           <!-- options for locations -->
-          <li class="has-dropdown">
-            <!-- <a href="#">Instructors</a> -->
-            <%= link_to "Locations", locations_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Locations", locations_path %></li>
-              <li><%= link_to "Add a Location", new_location_path %></li>
-            </ul>
-          </li>
+          <% if can? :read, Location %>
+            <li class="has-dropdown">
+              <!-- <a href="#">Instructors</a> -->
+              <%= link_to "Locations", locations_path %>
+              <ul class="dropdown">
+                <li><%= link_to "List Locations", locations_path %></li>
+                <% if can? :create, Location %>
+                  <li><%= link_to "Add a Location", new_location_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
           <!-- options for families -->
-          <li class="has-dropdown">
-            <!-- <a href="#">Instructors</a> -->
-            <%= link_to "Families", families_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Families", families_path %></li>
-              <li><%= link_to "Add a Family", new_family_path %></li>
-            </ul>
-          </li>
+          <% if can? :read, Family %>
+            <li class="has-dropdown">
+              <!-- <a href="#">Instructors</a> -->
+              <%= link_to "Families", families_path %>
+              <ul class="dropdown">
+                <li><%= link_to "List Families", families_path %></li>
+                <% if can? :create, Family %>
+                <li><%= link_to "Add a Family", new_family_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
           <!-- options for students -->
-          <li class="has-dropdown">
-            <!-- <a href="#">Instructors</a> -->
-            <%= link_to "Students", students_path %>
-            <ul class="dropdown">
-              <li><%= link_to "List Students", students_path %></li>
-              <li><%= link_to "Add a Student", new_student_path %></li>
-            </ul>
-          </li>
+          <% if can? :read, Student %>
+            <li class="has-dropdown">
+              <!-- <a href="#">Instructors</a> -->
+              <%= link_to "Students", students_path %>
+              <ul class="dropdown">
+                <li><%= link_to "List Students", students_path %></li>
+                <% if can? :create, Student %>
+                <li><%= link_to "Add a Student", new_student_path %></li>
+                <% end %>
+                <% if can? :manage, Registration %>
+                <li><%= link_to 'Add a Registration', new_registration_path%>
+                </li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
 
           <% if logged_in? %>
             <ul class="right">
               <li class="has-dropdown">
-                <%= link_to "Welcome, #{current_user.username}", user_path(current_user) %>
+                <%= link_to "Welcome #{current_user.instructor.first_name}!", current_user.instructor %>
                 <ul class="dropdown">
                   <li><%= link_to "Logout" , logout_path%></li>
                 </ul>

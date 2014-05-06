@@ -3,12 +3,13 @@ class RegistrationsController < ApplicationController
 
   def new
   	@registration = Registration.new
+  	@camps = Camp.active.chronological
   end
 
   def create
   	@registration = Registration.new(registration_params)
   	if @registration.save
-  		redirect_to(student_path, notice: "Student was successfully registered for the camp")
+  		redirect_to(home_path, notice: "Student was successfully registered for the camp")
   	else
   		render action: 'edit'
   	end
