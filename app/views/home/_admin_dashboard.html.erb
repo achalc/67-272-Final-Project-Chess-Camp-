@@ -15,17 +15,11 @@
       <%=  pie_chart @camps.group(:name).count, library: {backgroundColor: "#E6E6E6" } %>
     </div>  
 </div>
-<!-- 
-<div class="row">
-  <div class="large-12 columns">
-    <center><h4> Camps per Instructor </h4></center>
-    <%=  bar_chart @camps_to_instructor, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
-  </div>
-</div> -->
 
 <div class="row">
   <div class="large-12 columns">
-    <center><h4> Registrations per Camp </h4></center>
+    <center><h4> Camp Registrations by Date </h4></center>
     <%=  column_chart @camp_to_registration_admin, library: {backgroundColor: "#E6E6E6", colors: ['42ffe3']} %>
   </div>
 </div>
+

@@ -4,9 +4,11 @@
   		<p><%= image_tag('banner.jpg')%></p>
   	<% elsif can? :manage, :all,  %>
   		 <!-- Admin Dashboard -->
+       <%= render partial: "admin_sidenav" %>
   		 <%= render partial: "admin_dashboard" %>
   	<% else %>
   		<!-- Instructor Dashboard  -->
+      <%= render partial: 'instructor_sidenav' %>
   		<%= render partial: "instructor_dashboard"%>
   		<br>
   		<br>
