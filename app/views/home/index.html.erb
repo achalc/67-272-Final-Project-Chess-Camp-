@@ -3,11 +3,11 @@
 	<% if cannot? :update, Instructor %>
   		<p><%= image_tag('banner.jpg')%></p>
   	<% elsif can? :manage, :all,  %>
-  		 <!-- Instructor Dashboard -->
-  		 
+  		 <!-- Admin Dashboard -->
+  		 <%= render partial: "admin_dashboard" %>
   	<% else %>
-  		<!-- Admin Dashboard  -->
-
+  		<!-- Instructor Dashboard  -->
+  		<%= render partial: "instructor_dashboard"%>
   	<% end %>
     
   
@@ -30,12 +30,12 @@
       <!-- Gallery d with a block grid. Note: block grid items should be the same size for optimal results -->
       
       <ul class="small-block-grid-3">
-        <li><a href="#"><%= image_tag('AlexPlaying10.jpg')%></a></li>
-        <li><a href="#"><%= image_tag('Kelsey1.jpg')%></a></li>
-        <li><a href="#"><%= image_tag('chess-boy[2].jpg')%></a></li>
-        <li><a href="#"><%= image_tag('icon1.png')%></a></li>
-        <li><a href="#"><%= image_tag('icon2.png')%></a></li>
-        <li><a href="#"><%= image_tag('icon3.png')%></a></li>
+        <li><%= image_tag('AlexPlaying10.jpg')%></li>
+        <li><%= image_tag('Kelsey1.jpg')%></li>
+        <li><%= image_tag('chess-boy[2].jpg')%></li>
+        <li><%= image_tag('icon1.png')%></li>
+        <li><%= image_tag('icon2.png')%></li>
+        <li><%= image_tag('icon3.png')%></li>
       </ul>
     </div>
         
