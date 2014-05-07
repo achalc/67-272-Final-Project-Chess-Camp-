@@ -5,7 +5,10 @@
     <th width="200">Name</th>
     <th width="200">Phone</th>
     <th width="100">Camps</th>
-    <th width="100">Status</th>
+
+    <% if can? :manage, Instructor %>
+      <th width="100">Status</th>
+    <% end %>
     <th></th>
   </tr>
 
@@ -14,7 +17,9 @@
     <td><%= link_to instructor.name, instructor_path(instructor) %></td>
     <td align="center"><%= number_to_phone instructor.phone %></td>
     <td align="center"><%= instructor.camps.size %></td>
-    <td align="center"><%= image_tag 'active.png' %></td>
+    <% if can? :manage, instructor %>
+      <td align="center"><%= image_tag 'active.png' %></td>
+    <% end %>
     <td>
       <% if can? :update, instructor %><%= link_to 'Edit', edit_instructor_path(instructor), class: "button tiny radius" %>
       <% end %>

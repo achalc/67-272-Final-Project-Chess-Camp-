@@ -38,6 +38,10 @@
               <% if can? :create, Camp %>
                 <li><%= link_to "Add a Camp", new_camp_path %></li>
               <% end %>
+              <% if can? :manage, Registration %>
+                <li><%= link_to 'Add a Registration', new_registration_path%>
+                </li>
+              <% end %>
             </ul>
           </li>
 
