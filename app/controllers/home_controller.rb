@@ -24,6 +24,7 @@ class HomeController < ApplicationController
       # find the accounts receivable for camps in a year
       @camp_accounts_receivable = Camp.all.chronological.map { |camp| Registration.where('camp_id = ?', camp.id).deposit_only.count * (camp.cost - 50 ) }
       @camp_to_ar = Hash[@camp_names.zip @camp_accounts_receivable]
+
     end
   end
 
@@ -45,9 +46,6 @@ class HomeController < ApplicationController
       # find the accounts receivable for camps in a year
       @camp_accounts_receivable = Camp.all.chronological.map { |camp| Registration.where('camp_id = ?', camp.id).deposit_only.count * (camp.cost - 50 ) }
       @camp_to_ar = Hash[@camp_names.zip @camp_accounts_receivable]
-      # find total revenue for a family in a year
-
-      # find the accounts receivable for a family in a year
     end
   end
   
