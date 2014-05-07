@@ -10,8 +10,7 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require bootstrap-datetimepicker
 
  *= require_tree .
  */
-
-*= require jquery.ui.all
