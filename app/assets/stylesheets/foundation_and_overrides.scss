@@ -762,7 +762,7 @@ $button-margin-bottom: rem-calc(0);
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-$panel-bg: scale-color(#B5E7F5, $lightness: 50%);
+$panel-bg: scale-color(#42ffe3, $lightness: 50%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1028,8 +1028,8 @@ $panel-bg: scale-color(#B5E7F5, $lightness: 50%);
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-$table-even-row-bg: #FAF2F0;
+$table-bg: #E6E6E6;
+$table-even-row-bg: #42ffe3;
 
 // These control the table cell border style
 $table-border-style: none;
@@ -1046,7 +1046,7 @@ $table-border-style: none;
 // These control the row padding and font styles
 // $table-row-padding: rem-calc(9 10);
 // $table-row-font-size: rem-calc(14);
-// $table-row-font-color: #222;
+ $table-row-font-color: #000000;
 // $table-line-height: rem-calc(18);
 
 // These are for controlling the display and margin of tables
