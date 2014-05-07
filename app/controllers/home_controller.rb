@@ -17,6 +17,13 @@ class HomeController < ApplicationController
       @upcoming_camps_admin = Camp.all.upcoming.chronological.map { |e| e.name.to_s + ' on ' + humanize_date(e.start_date)  }
       @registration_count_admin = Camp.all.upcoming.chronological.map { |camp| Registration.where("camp_id = ?", camp.id).count  }
       @camp_to_registration_admin = Hash[@upcoming_camps_admin.zip @registration_count_admin]
+      # find total revenue and balances for camps in a year
+      @camp_names = Camp.all.chronological.map { |e| e.name.to_s + ' on ' + humanize_date(e.start_date) }
+      @camp_revenues = Camp.all.chronological.map { |camp| Registration.where("camp_id = ?", camp.id).paid.count * camp.cost + Registration.where('camp_id = ?', camp.id).deposit_only.count * 50}
+      @camp_to_revenues = Hash[@camp_names.zip @camp_revenues]
+      # find the accounts receivable for camps in a year
+      @camp_accounts_receivable = Camp.all.chronological.map { |camp| Registration.where('camp_id = ?', camp.id).deposit_only.count * (camp.cost - 50 ) }
+      @camp_to_ar = Hash[@camp_names.zip @camp_accounts_receivable]
     end
   end
 
