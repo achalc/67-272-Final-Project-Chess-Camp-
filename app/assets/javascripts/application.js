@@ -14,13 +14,15 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require foundation
+//= require jquery.ui.all
 //= require_tree .
-//= require bootstrap-datetimepicker
-//= require bootstrap-datetimepicker/pickers
+
 
 
 $(function(){ $(document).foundation(); });
 
 
 
-
+$(function() {
+  $('.datepicker').datepicker();
+});

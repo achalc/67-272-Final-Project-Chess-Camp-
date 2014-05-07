@@ -50,8 +50,7 @@ gem 'nested_form'
 # Use time date helpers
 gem 'time_date_helpers', '0.0.2'
 
-# SORRY! But the 'datetimepicker-rails' name in RubyGems repo already taken.
-gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
+gem 'jquery-ui-rails'
 
 # Use foundation for base CSS
 gem 'foundation-rails'
