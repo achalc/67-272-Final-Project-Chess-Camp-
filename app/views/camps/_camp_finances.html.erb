@@ -1,5 +1,7 @@
 <h3>Camp Finances</h3>
 
+<% if !@registrations.empty? %>
+
 <table class="table">
   <tr>
     <th width="200">Number of Registrations</th>
@@ -16,3 +18,7 @@
     </tr>
 
 </table>
+
+<% else %>
+  <h4>No Registrations</h4>
+<% end %>
