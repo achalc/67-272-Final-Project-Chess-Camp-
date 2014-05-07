@@ -15,11 +15,14 @@
 //= require jquery_nested_form
 //= require foundation
 //= require_tree .
-//= require bootstrap-datetimepicker
-//= require bootstrap-datetimepicker/pickers
 
 
 $(function(){ $(document).foundation(); });
 
 
-
+// Datepicker code
+$(function() {
+  $(".datepicker").datepicker({
+    format: 'mm/dd/YYYY'
+  });
+});
