@@ -13,10 +13,28 @@
     <tr>
       <td><%= @registrations.count %> </td>
       <td><%= humanize_date @registrations.first.camp.start_date %></td>
-      <td><%= number_to_currency(@registrations.paid.count * @registrations.first.camp.cost + @registrations.deposit_only.count * 50) %></td>
-      <td><%= number_to_currency(@registrations.deposit_only.count * @registrations.first.camp.cost - 50) %></td>
+      <td><%= number_to_currency(@registrations.paid.count * @registrations.first.camp.cost + (@registrations.deposit_only.count * 50)) %></td>
+      <td><%= number_to_currency(@registrations.deposit_only.count * (@registrations.first.camp.cost - 50)) %></td>
     </tr>
 
+</table>
+
+<h4>Outstanding Balances</h4>
+<table class='table'>
+
+  <tr>
+    <th width="200">Student Name</th>
+    <th width="200">Parent Name</th>
+    <th width="200">Amount Due</th>
+  </tr>
+
+  <% @registrations.deposit_only.each do |reg| %>
+    <tr>
+      <td><%= reg.student.proper_name %></td>
+      <td><%= reg.student.family.parent_first_name + ' ' + reg.student.family.family_name %></td>
+      <td><%= number_to_currency(reg.camp.cost - 50) %></td>
+    </tr>
+  <% end %>
 </table>
 
 <% else %>
