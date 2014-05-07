@@ -5,7 +5,11 @@
     <ul class="side-nav">
       <% @registrations.each do |registration| %>
         <li><%=  link_to registration.student.name, student_path(registration.student) %></li>
-        <li><%= "Rating: " + registration.student.rating.to_s %></li>
+        <% if registration.student.rating != 0 %>
+          <li><%= "Rating: " + registration.student.rating.to_s %></li>
+        <% else %>
+          <li><%= "Unrated" %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

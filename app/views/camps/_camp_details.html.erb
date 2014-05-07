@@ -6,7 +6,12 @@
   <%= number_to_currency(@camp.cost) %><br /><br />
 
 <strong>Rating:&nbsp;&nbsp;</strong> 
-  <%= @camp.curriculum.min_rating.to_s + " - " + @camp.curriculum.max_rating.to_s %><br /><br />
+  <% if @camp.curriculum.min_rating == 0 %>
+    <%= "Unrated" + " - " + @camp.curriculum.max_rating.to_s %>
+  <% else %>
+    <%= @camp.curriculum.min_rating.to_s + " - " + @camp.curriculum.max_rating.to_s %>
+  <% end %>
+  <br /><br />
 
 
 <strong>Max Students:&nbsp;&nbsp;</strong> 
