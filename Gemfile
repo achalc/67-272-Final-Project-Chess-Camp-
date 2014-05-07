@@ -68,6 +68,8 @@ gem 'bcrypt-ruby', '3.1.5'
 # Use chartkick to generate graphs / charts
 gem 'chartkick'
 
+gem 'gmaps4rails'
+
 # Additional gems that are very useful in Rails development
 group :development do
   gem 'quiet_assets'

@@ -1253,6 +1253,13 @@ a img {
 
 }
 
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 
+
 select.date { width: 95px; }
 #camp_time_slot, #camp_max_students, #camp_cost, #camp_curriculum_id { width: 290px; }
 #instructor_bio { height: 7rem; }
