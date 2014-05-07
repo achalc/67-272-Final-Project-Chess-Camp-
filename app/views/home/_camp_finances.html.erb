@@ -1,13 +1,10 @@
 <div class='row'>
   <div class='large-12 columns'>
     <br>
-    <center><h4> Revenue per Camp </h4>
-      <h6><%= "Total Revenue: $" + @camp_revenues.sum.to_s%></h6>
-
-
-    </center>
+    <center><h4> Revenue per Camp </h4></center>
     <br>
     <%= column_chart @camp_to_revenues, library: {backgroundColor: "#E6E6E6", colors: ['09e823']}   %>
+    <center><h6><%= "Total Revenue: " + number_to_currency(@camp_revenues.sum)%></h6></center>
   </div>
 </div>
 
@@ -16,15 +13,9 @@
 
   <div class='large-12 columns'>
     <br>
-    <center><h4>Accounts Receivable per Camp</h4>
-      <h6><%= "Total Accounts Receivable: $" + @camp_accounts_receivable.sum.to_s %></h6>
-    </center>
+    <center><h4>Accounts Receivable per Camp</h4></center>
     <br>
-
-
     <%= column_chart @camp_to_ar, library: {backgroundColor: "#E6E6E6", colors: ['de302a']}   %>
-
-
-
+    <center><h6><%= "Total Accounts Receivable: " + number_to_currency(@camp_accounts_receivable.sum) %></h6></center>
   </div>
 </div>

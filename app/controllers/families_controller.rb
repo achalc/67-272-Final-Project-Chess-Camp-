@@ -9,6 +9,12 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @family_registrations = []
+    @family.students.each do |student|
+      student.registrations.each do |registration|
+        @family_registrations << registration
+      end
+    end
   end
 
   def new

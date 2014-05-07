@@ -1,0 +1,26 @@
+<h3>Family Finances</h3>
+
+<table class="table">
+  <tr>
+    <th width="200">Student Name</th>
+    <th width="200">Camp Name</th>
+    <th width="200">Date</th>
+    <th width="200">Payment Status</th>
+    <th width="200">Remaining Balance</th>
+  </tr>
+
+  <% @family_registrations.each do |reg| %>
+    <tr>
+      <td><%= reg.student.proper_name %></td>
+      <td><%= reg.camp.name %> </td>
+      <td><%= humanize_date(reg.camp.start_date)%></td>
+      <td><%=  reg.payment_status.capitalize %></td>
+      <% if reg.payment_status == 'full' %>
+        <td>0</td>
+      <% else %>
+        <td><%= number_to_currency(reg.camp.cost - 50) %></td>
+      <% end %>
+    </tr>
+
+  <% end %>
+</table>
