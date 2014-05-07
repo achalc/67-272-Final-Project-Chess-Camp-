@@ -21,7 +21,7 @@
       <td align="center"><%= image_tag 'active.png' %></td>
     <% end %>
     <td>
-      <% if can? :update, instructor %><%= link_to 'Edit', edit_instructor_path(instructor), class: "button tiny radius" %>
+      <% if can? :update, instructor %><%= link_to 'Edit', edit_instructor_path(instructor), class: "button secondary tiny radius" %>
       <% end %>
     </td>
   </tr>

@@ -14,7 +14,7 @@
 			<td><%= location.street_1 %></td>
 			<td><%= location.max_capacity %></td>
 			<% if can? :manage, Location %>
-				<td><%= link_to "Edit", edit_location_path(location), class: "buttony tiny radius" %></td>
+				<td><%= link_to "Edit", edit_location_path(location), class: "button secondary tiny radius" %></td>
 			<% end %>
 		</tr>
 
