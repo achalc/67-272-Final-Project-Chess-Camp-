@@ -7,11 +7,6 @@
        <%= render partial: "admin_sidenav" %>
   		 <%= render partial: "admin_dashboard" %>
        <%= render partial: 'camp_finances' %> 
-       <br> </br>
-       <br> </br>
-       <!-- Instructor Dashboard for Admin -->
-       <center><h3> <%= @current_user.instructor.proper_name %> </h3></center>
-       <%= render partial: 'instructor_dashboard' %>
   	<% else %>
   		<!-- Instructor Dashboard  -->
       <%= render partial: 'instructor_sidenav' %>

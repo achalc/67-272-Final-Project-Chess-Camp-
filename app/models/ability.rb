@@ -15,7 +15,6 @@ class Ability
         end
         can :read, Location
         # may have to restrict what other instructors can be seen
-        can :read, Curriculum
         # may have to restrict which camps an instructor can see
         can :read, Camp
         # instructor can only view own camp's students details

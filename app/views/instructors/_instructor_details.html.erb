@@ -21,11 +21,13 @@
 <br /><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
-<strong>Picture</strong><br />
+<strong>Picture</strong>
 <br /><br />
-<% unless @instructor.picture_url.nil? %>
+<% if !@instructor.picture_url.nil? %>
   <p><%= image_tag @instructor.picture_url %></p>
-<% end %> 
+<% else %>
+  <%= "Picture Unavailable" %>  
+<% end %>
   <br /><br />
 
 

@@ -1,12 +1,15 @@
 <div class="row">
-  <div class="small-7 columns">
+  <div class="small-8 columns">
     <!-- MAIN CONTENT GOES HERE -->
     <%= render :partial => "camp_details" %>
+    <br><br>
+    <% if can? :manage, :all %>
+      <div class="small-8 columns">
+        <%= render partial: 'camp_finances' %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="small-1 columns">
-    &nbsp;
-  </div>
 
   <div class="small-4 columns">
     <!-- SIDEBAR CONTENT GOES HERE -->
@@ -15,12 +18,3 @@
   </div>
 </div>
 
-<% if can? :manage, :all %>
-  <div class="row">
-    <div class="large-12 columns">
-
-      <%= render partial: 'camp_finances' %>
-
-    </div>
-  </div>
-<% end %>

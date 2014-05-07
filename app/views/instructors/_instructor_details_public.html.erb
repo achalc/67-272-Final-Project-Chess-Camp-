@@ -2,11 +2,15 @@
 <strong>Name:&nbsp;&nbsp;</strong> 
   <%= @instructor.proper_name %><br /><br />
 
-<strong>Biography</strong><br />
+<strong>Biography</strong>
+	<br /><br />
   <%= @instructor.bio.nil? ? "N/A" : @instructor.bio %><br /><br />
 
 <strong>Picture</strong>
-<!-- Need to add in headshot of instructor -->
-<% unless @instructor.picture_url.nil? %>
-	<p><%= image_tag @instructor.picture_url %></p>
-<% end %> 
+<br /><br />
+<% if !@instructor.picture_url.nil? %>
+  <p><%= image_tag @instructor.picture_url %></p>
+<% else %>
+  <%= "Picture Unavailable" %>  
+<% end %>
+<br /><br />

@@ -85,7 +85,7 @@
           <% end %>
 
           <!-- options for students -->
-          <% if can? :read, Student %>
+          <% if can? :manage, Student %>
             <li class="has-dropdown">
               <!-- <a href="#">Instructors</a> -->
               <%= link_to "Students", students_path %>
