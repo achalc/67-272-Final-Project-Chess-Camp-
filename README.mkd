@@ -1,5 +1,15 @@
 ## 67-272: Chess Camp Phase 5 Starter ##
 
+Admin Reporting - Displayed as a series of graphs and charts.
+Hover mouse over graph for details about each.
+
+Camp financial info and Family financial info are available on the respective 'show' pages.
+
+Creating registrations - To register a student, user must be logged in as an administrator. Link is available on admin dashboard and in students dropdown.
+
+
+----------
+
 This is starter code for the course project in 67-272: Application Design and Development.  This code has basic views and controllers required for phase 3 and it passes all cucumber tests.  In addition, it has all the models created and tested as specified in phase 4.
 
 Students can use this as a base to work off of in phase 5 -- HOWEVER, the basic design, color scheme, images and the like must be modified from the tepid design provided here.  (BTW, the text on the static pages like home, about, and contact are purposefully snarky -- you would never use this in a real app and we expect you to modify it to something more appropriate.)  We will reiterate this warning in phase 5 but we are saying it now as well to maximize the opportunities to get the word out: **if students stay with the CSS, images and text used here they can expect to lose 10 points on their phase 5 grade.**  (If you want to have fun with this project you have to make it your own and style it as you see fit.)
