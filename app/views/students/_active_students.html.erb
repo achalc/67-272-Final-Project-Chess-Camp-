@@ -14,9 +14,9 @@
 			<td><%= student.age %></td>
 			<td>
 				<% if student.rating == 0 %>
-					<%= "Unrated" %><br /><br />
+					<%= "Unrated" %>
 				<% else %>
-					<%= student.rating %><br /><br />
+					<%= student.rating %>
 				<% end %>
 			</td>
 			<% if can? :manage, Student %>
