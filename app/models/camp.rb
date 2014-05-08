@@ -1,6 +1,7 @@
 class Camp < ActiveRecord::Base
   include ChessCampHelpers
 
+
   # relationships
   belongs_to :curriculum
   has_many :camp_instructors
@@ -8,6 +9,7 @@ class Camp < ActiveRecord::Base
   belongs_to :location
   has_many :registrations
   has_many :students, through: :registrations
+
 
   # validations
   validates_presence_of :curriculum_id, :time_slot, :start_date

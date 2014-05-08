@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
   	if @registration.save
   		redirect_to(home_path, notice: "Student was successfully registered for the camp")
   	else
-  		render action: 'edit'
+  		render action: 'new'
   	end
   end
 

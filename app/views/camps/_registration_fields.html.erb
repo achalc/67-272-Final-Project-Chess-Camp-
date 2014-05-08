@@ -1,0 +1,3 @@
+<%= f.input :student_id, collection: Student.active.alphabetical,  value_method: :id, prompt: "Select student" %>
+<%= f.input :payment_status, collection: %w(deposit full), prompt: "Select a payment status" %>
+<%= f.input :points_earned %>
